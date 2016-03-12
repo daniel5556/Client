@@ -21,7 +21,6 @@
 package com.github.libertadvoluntaria.gui;
 
 import com.github.libertadvoluntaria.util.FileUtil;
-
 import com.runeclassic.loader.ClientLoader;
 import com.runeclassic.loader.applet.ClientAppletStub;
 
@@ -68,9 +67,10 @@ public class GameFrame extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 addIcon();
-                initButtons();
+                //initButtons();
                 initGamePanel();
                 addLoadingLabel();
+                initUI();
 
                 pack();
                 setLocationRelativeTo(null);
@@ -86,7 +86,26 @@ public class GameFrame extends JFrame {
             }
         });
     }
+    
+    private void initUI() {
+        // Creates a menubar for a JFrame
+        JMenuBar menuBar = new JMenuBar();
 
+        // Add the menubar to the frame
+        setJMenuBar(menuBar);
+        
+        menuBar.add(Box.createHorizontalGlue());
+        
+        JButton screenshot = new JButton(new ImageIcon("resources/resources/images/camera-icon.png"));
+      //  screenshot.setOpaque(false);
+        //screenshot.setContentAreaFilled(false);
+        //screenshot.setBorderPainted(false);
+        
+        menuBar.add(screenshot);
+        
+
+    }
+    
     private void addIcon() {
         try {
             this.icon = ImageIO.read(

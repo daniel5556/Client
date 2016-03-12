@@ -24,7 +24,7 @@ import java.util.Arrays;
 
 public class Worlds {
 
-    public static String defaultWorld = "27";
+    public static String defaultWorld = "67";
 
     public static final String[] WORLDS = {
         "1", "2", "3", "4", "5", "6", "8", "9", "10", "11", "12", "13", "14",
